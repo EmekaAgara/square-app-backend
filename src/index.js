@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const productRoutes = require('./router/productRoutes');
 const orderRoutes = require('./router/orderRoutes');
 const paymentRoutes = require('./router/paymentRoutes');
+const recommendedproductRoutes = require('./router/recommendedproductRoutes');
 
 if (process.env.NODE_ENV !== "production") {
     require("dotenv").config();
@@ -16,6 +17,7 @@ app.use(bodyParser.json());
 app.use('/products', productRoutes);
 app.use('/orders', orderRoutes);
 app.use('/payments', paymentRoutes);
+app.use('/recproduct', recommendedproductRoutes);
 // app.use('/v2/online-checkout/payment-links', paymentRoutes);
 
 app.get('/', (req, res) => {
